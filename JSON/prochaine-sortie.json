@@ -6,10 +6,13 @@
   "description": "-",
   "cover_image": "https://www.morgannmusic.uk/assets/level-max-cover.jpg",
   "plateformes": {
-    "spotify": "https://open.spotify.com/track/EXAMPLE",
-    "apple_music": "https://music.apple.com/fr/album/EXAMPLE",
-    "deezer": "https://www.deezer.com/fr/track/EXAMPLE",
-    "youtube": "https://www.youtube.com/watch?v=EXAMPLE"
+    "spotify": "https://open.spotify.com/intl-fr/artist/0WJlJdaavSKPNoCSSHb8OC?si=iWMUCcMzTGiiWx-EI9pkpw",
+    "apple_music": "https://music.apple.com/fr/artist/morgann-music/1820890727",
+    "deezer": "https://www.deezer.com/fr/artist/330395931",
+    "youtube": "https://music.youtube.com/channel/UCsnyx7G0XZhbhFAND2HXLpg",
+    "amazon_music": "https://music.amazon.fr/artists/B0FD43W4LJ/morgann-music?marketplaceId=A13V1IB3VIYZZH&musicTerritory=FR&ref=dm_sh_bLjoF76O6MbpavXAQXy5wR0Xk"
   },
   "hashtags": ["#MorgannMusic", "#ProchaineSortie", "#LEVELMAX"]
 }
+
+
