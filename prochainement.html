@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prochainement - Morgann Music</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <script src="navbar.js"></script>
+
+    <main class="container" style="padding: 30px; max-width: 900px; margin: auto;">
+        <h1>Prochainement</h1>
+        <p>Chargement des informations de la prochaine sortie ...</p>
+
+        <section id="prochaine-sortie"></section>
+
+        <div style="margin-top: 24px;">
+            <a href="index.html"><button class="btn">Retour à l'accueil</button></a>
+        </div>
+    </main>
+
+    <script>
+        async function afficherProchaineSortie() {
+            const conteneur = document.getElementById('prochaine-sortie');
+            try {
+                const res = await fetch('JSON/prochaine-sortie.json');
+                if (!res.ok) throw new Error('Fichier JSON introuvable');
+                const data = await res.json();
+
+                if (!data.titre) {
+                    conteneur.innerHTML = '<p>Aucune info disponible.</p>';
+                    return;
+                }
+
+                const plateformeEls = Object.entries(data.plateformes || {}).map(([key, url]) => {
+                    return `<li><strong>${key.replace('_', ' ')}:</strong> <a href="${url}" target="_blank" rel="noopener">Voir sur ${key}</a></li>`;
+                }).join('');
+
+                conteneur.innerHTML = `
+                    <article class="card" style="background: #1a1a1a; color: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,.2);">
+                        <h2>${data.titre}</h2>
+                        <p><strong>Artiste :</strong> ${data.artiste || ' —'}</p>
+                        <p><strong>Date sortie :</strong> ${data.date_sortie || 'À venir'}</p>
+                        <p><strong>Genre :</strong> ${data.genre || 'N/A'}</p>
+                        <p>${data.description || ''}</p>
+                        <h3>Plateformes</h3>
+                        <ul>${plateformeEls || '<li>Pas de plateforme renseignée.</li>'}</ul>
+                        ${data.hashtags ? '<p>' + data.hashtags.map(tag => `<span style="margin-right: 8px;">${tag}</span>`).join('') + '</p>' : ''}
+                    </article>
+                `;
+            } catch (err) {
+                conteneur.innerHTML = `<p style="color: #f55;">Erreur : ${err.message}</p>`;
+            }
+        }
+
+        afficherProchaineSortie();
+    </script>
+</body>
+</html>

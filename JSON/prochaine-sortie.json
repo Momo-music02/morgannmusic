@@ -1,0 +1,14 @@
+{
+  "titre": "5080",
+  "artiste": "Morgann Music",
+  "date_sortie": "2026-04-30",
+  "genre": "Pop / Electro",
+  "description": "Nouvelle sortie en préparation avec featuring et clip officiel.",
+  "plateformes": {
+    "spotify": "https://open.spotify.com/track/EXAMPLE",
+    "apple_music": "https://music.apple.com/fr/album/EXAMPLE",
+    "deezer": "https://www.deezer.com/fr/track/EXAMPLE",
+    "youtube": "https://www.youtube.com/watch?v=EXAMPLE"
+  },
+  "hashtags": ["#MorgannMusic", "#ProchaineSortie", "#5080"]
+}
