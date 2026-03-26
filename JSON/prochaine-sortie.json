@@ -1,14 +1,15 @@
 {
-  "titre": "5080",
+  "titre": "LEVEL MAX",
   "artiste": "Morgann Music",
   "date_sortie": "2026-04-30",
-  "genre": "Pop / Electro",
-  "description": "Nouvelle sortie en préparation avec featuring et clip officiel.",
+  "genre": "Electro Pop",
+  "description": "Profiter de la réédition de 5 musiques en Apple Lossless Hi-Res et Dolby Atmos sur toutes les plateformes.",
+  "cover_image": "https://www.morgannmusic.uk/assets/level-max-cover.jpg",
   "plateformes": {
     "spotify": "https://open.spotify.com/track/EXAMPLE",
     "apple_music": "https://music.apple.com/fr/album/EXAMPLE",
     "deezer": "https://www.deezer.com/fr/track/EXAMPLE",
     "youtube": "https://www.youtube.com/watch?v=EXAMPLE"
   },
-  "hashtags": ["#MorgannMusic", "#ProchaineSortie", "#5080"]
+  "hashtags": ["#MorgannMusic", "#ProchaineSortie", "#LEVELMAX"]
 }
