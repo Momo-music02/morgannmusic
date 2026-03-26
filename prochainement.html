@@ -37,9 +37,6 @@
             padding: 24px;
             margin: 0 auto;
             overflow: hidden;
-        }
-
-        .upcoming-card-content {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
@@ -121,7 +118,7 @@
         }
 
         @media(min-width: 900px) {
-            .upcoming-card-content {
+            .upcoming-card {
                 grid-template-columns: 1fr 1.2fr;
                 align-items: center;
             }
@@ -143,9 +140,6 @@
 
         <section id="prochaine-sortie"></section>
 
-        <div style="margin-top: 24px; text-align:center;">
-            <a href="index.html"><button class="btn">Retour à l'accueil</button></a>
-        </div>
     </main>
 
     <script>
@@ -172,17 +166,15 @@
 
                 conteneur.innerHTML = `
                     <article class="upcoming-card">
-                        <div class="upcoming-card-content">
-                            ${imageHtml}
-                            <div class="upcoming-info">
-                                <div class="eyebrow">Prochainement</div>
-                                <h2>${data.titre}</h2>
-                                <p class="artist">${data.artiste || 'Morgann Music'}</p>
-                                <p class="releases"><strong>Sortie :</strong> ${data.date_sortie || 'Bientôt'}</p>
-                                <p class="desc">${data.description || 'À découvrir très bientôt.'}</p>
-                                <div class="upcoming-platforms">${plateformesLinks || '<span>Aucune plateforme renseignée</span>'}</div>
-                                ${hashtagsMarkup}
-                            </div>
+                        ${imageHtml}
+                        <div class="upcoming-info">
+                            <div class="eyebrow">Prochainement</div>
+                            <h2>${data.titre}</h2>
+                            <p class="artist">${data.artiste || 'Morgann Music'}</p>
+                            <p class="releases"><strong>Sortie :</strong> ${data.date_sortie || 'Bientôt'}</p>
+                            <p class="desc">${data.description || 'À découvrir très bientôt.'}</p>
+                            <div class="upcoming-platforms">${plateformesLinks || '<span>Aucune plateforme renseignée</span>'}</div>
+                            ${hashtagsMarkup}
                         </div>
                     </article>
                 `;
