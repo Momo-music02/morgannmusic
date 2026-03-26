@@ -1,18 +1,36 @@
-{
-  "titre": "Aucune sortie de prévue",
-  "artiste": "-",
-  "date_sortie": "-",
-  "genre": "-",
-  "description": "-",
-  "cover_image": "https://www.morgannmusic.uk/assets/level-max-cover.jpg",
-  "plateformes": {
-    "spotify": "https://open.spotify.com/intl-fr/artist/0WJlJdaavSKPNoCSSHb8OC?si=iWMUCcMzTGiiWx-EI9pkpw",
-    "apple_music": "https://music.apple.com/fr/artist/morgann-music/1820890727",
-    "deezer": "https://www.deezer.com/fr/artist/330395931",
-    "youtube": "https://music.youtube.com/channel/UCsnyx7G0XZhbhFAND2HXLpg",
-    "amazon_music": "https://music.amazon.fr/artists/B0FD43W4LJ/morgann-music?marketplaceId=A13V1IB3VIYZZH&musicTerritory=FR&ref=dm_sh_bLjoF76O6MbpavXAQXy5wR0Xk"
+[
+  {
+    "titre": "Aucune sortie de prévue",
+    "artiste": "-",
+    "date_sortie": "-",
+    "genre": "-",
+    "description": "-",
+    "cover_image": "https://www.morgannmusic.uk/assets/level-max-cover.jpg",
+    "plateformes": {
+      "apple_music": "https://music.apple.com/fr/artist/morgann-music/1820890727",
+      "spotify": "https://open.spotify.com/intl-fr/artist/0WJlJdaavSKPNoCSSHb8OC?si=iWMUCcMzTGiiWx-EI9pkpw",
+      "deezer": "https://www.deezer.com/fr/artist/330395931",
+      "youtube": "https://music.youtube.com/channel/UCsnyx7G0XZhbhFAND2HXLpg",
+      "amazon_music": "https://music.amazon.fr/artists/B0FD43W4LJ/morgann-music?marketplaceId=A13V1IB3VIYZZH&musicTerritory=FR&ref=dm_sh_bLjoF76O6MbpavXAQXy5wR0Xk"
+    },
+    "hashtags": ["#MorgannMusic", "#ProchaineSortie", "#LEVELMAX"]
   },
-  "hashtags": ["#MorgannMusic", "#ProchaineSortie", "#LEVELMAX"]
-}
+  {
+    "titre": "LEVEL MAX",
+    "artiste": "Morgann Music",
+    "date_sortie": "2026-04-30",
+    "genre": "Electro Pop",
+    "description": "Profiter de la réédition de 5 musiques en Apple Lossless Hi-Res et Dolby Atmos sur toutes les plateformes.",
+    "cover_image": "https://lh3.googleusercontent.com/sitesv/APaQ0STkFzPuKarITcdBXW7NJMtcmHEhDDw9LpgUgBF_o_k1Wp-I-h7C2abHY5pHGZJ0U_cmqIFmrcFqdrtv21wnTDeNuQV61iP7bfe06wB5fZpcwLVxesSh7cegkPBqdmy7fnJXyHrJK2ZXVlAbBrqq1TbGI76_sEepZtXz8o_VT31N_oZ8WljGBDP0UV3c5DunLD9z-T-NmUUvNN_I1WCAV99GgbFOqRnOv9xBMYY=w1280",
+    "plateformes": {
+      "apple_music": "https://music.apple.com/fr/artist/morgann-music/1820890727",
+      "spotify": "https://open.spotify.com/intl-fr/artist/0WJlJdaavSKPNoCSSHb8OC?si=iWMUCcMzTGiiWx-EI9pkpw",
+      "deezer": "https://www.deezer.com/fr/artist/330395931",
+      "youtube": "https://music.youtube.com/channel/UCsnyx7G0XZhbhFAND2HXLpg",
+      "amazon_music": "https://music.amazon.fr/artists/B0FD43W4LJ/morgann-music?marketplaceId=A13V1IB3VIYZZH&musicTerritory=FR&ref=dm_sh_bLjoF76O6MbpavXAQXy5wR0Xk"
+    },
+    "hashtags": ["#MorgannMusic", "#LEVELMAX", "#ElectroPop"]
+  }
+]
 
 

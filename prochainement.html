@@ -150,34 +150,45 @@
                 if (!res.ok) throw new Error('Fichier JSON introuvable');
                 const data = await res.json();
 
-                if (!data.titre) {
+                // Vérifier si c'est un tableau ou un objet unique
+                const sorties = Array.isArray(data) ? data : [data];
+
+                if (sorties.length === 0 || !sorties[0].titre) {
                     conteneur.innerHTML = '<p>Aucune info disponible.</p>';
                     return;
                 }
 
-                const plateformesLinks = Object.entries(data.plateformes || {}).map(([key, url]) => {
-                    const label = key.replace(/_/g, ' ').replace(/\b\w/g, s => s.toUpperCase());
-                    return `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
-                }).join('');
+                // Fonction pour créer le HTML d'une carte
+                function creerCarte(sortie) {
+                    const plateformesLinks = Object.entries(sortie.plateformes || {}).map(([key, url]) => {
+                        const label = key.replace(/_/g, ' ').replace(/\b\w/g, s => s.toUpperCase());
+                        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+                    }).join('');
 
-                const imageHtml = data.cover_image ? `<div class="upcoming-cover"><img src="${data.cover_image}" alt="Couverture ${data.titre}"></div>` : '';
+                    const imageHtml = sortie.cover_image ? `<div class="upcoming-cover"><img src="${sortie.cover_image}" alt="Couverture ${sortie.titre}"></div>` : '';
 
-                const hashtagsMarkup = data.hashtags ? `<div class="upcoming-tags">${data.hashtags.map(tag => `<span>${tag}</span>`).join('')}</div>` : '';
+                    const hashtagsMarkup = sortie.hashtags ? `<div class="upcoming-tags">${sortie.hashtags.map(tag => `<span>${tag}</span>`).join('')}</div>` : '';
 
-                conteneur.innerHTML = `
-                    <article class="upcoming-card">
-                        ${imageHtml}
-                        <div class="upcoming-info">
-                            <div class="eyebrow">Prochainement</div>
-                            <h2>${data.titre}</h2>
-                            <p class="artist">${data.artiste || 'Morgann Music'}</p>
-                            <p class="releases"><strong>Sortie :</strong> ${data.date_sortie || 'Bientôt'}</p>
-                            <p class="desc">${data.description || 'À découvrir très bientôt.'}</p>
-                            <div class="upcoming-platforms">${plateformesLinks || '<span>Aucune plateforme renseignée</span>'}</div>
-                            ${hashtagsMarkup}
-                        </div>
-                    </article>
-                `;
+                    return `
+                        <article class="upcoming-card">
+                            ${imageHtml}
+                            <div class="upcoming-info">
+                                <div class="eyebrow">Prochainement</div>
+                                <h2>${sortie.titre}</h2>
+                                <p class="artist">${sortie.artiste || 'Morgann Music'}</p>
+                                <p class="releases"><strong>Sortie :</strong> ${sortie.date_sortie || 'Bientôt'}</p>
+                                <p class="desc">${sortie.description || 'À découvrir très bientôt.'}</p>
+                                <div class="upcoming-platforms">${plateformesLinks || '<span>Aucune plateforme renseignée</span>'}</div>
+                                ${hashtagsMarkup}
+                            </div>
+                        </article>
+                    `;
+                }
+
+                // Créer le HTML pour toutes les sorties
+                const htmlSorties = sorties.map(creerCarte).join('');
+
+                conteneur.innerHTML = htmlSorties;
             } catch (err) {
                 conteneur.innerHTML = `<p style="color: #f55;">Erreur : ${err.message}</p>`;
             }
