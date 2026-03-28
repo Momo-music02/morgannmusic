@@ -151,7 +151,7 @@
         async function afficherProchaineSortie() {
             const conteneur = document.getElementById('prochaine-sortie');
             try {
-                const res = await fetch('JSON/dernieresortie.json');
+                const res = await fetch('https://raw.githubusercontent.com/Momo-music02/jsonmorgannmusic/refs/heads/main/dernieresortie.json');
                 if (!res.ok) throw new Error('Fichier JSON introuvable');
                 const data = await res.json();
 
