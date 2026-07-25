@@ -1,0 +1,29 @@
+name: Release Open Road
+
+on:
+  schedule:
+    # Le 15 juin à minuit en France = 14 juin à 22h00 UTC
+    - cron: '0 22 14 6 *'
+
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Récupère tout l'historique pour pouvoir merge
+
+      - name: Configurer Git
+        run: |
+          git config --global user.name "Morgann Release Bot"
+          git config --global user.email "bot@morgannmusic.com"
+
+      - name: Fusionner prep-open-road dans main
+        run: |
+          # Bascule sur main
+          git checkout main
+          # Fusionne la branche de prep
+          git merge origin/prep-open-road --no-ff -m "Merge automatique : Sortie de Open Road 🚀"
+          # Balance en ligne
+          git push origin main
